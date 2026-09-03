@@ -1,0 +1,15 @@
+/*
+Theme Name: TPHB - The Praise House Baltimore
+Theme URI: https://rccgthepraisehouse.org
+Author: RCCG The Praise House Baltimore
+Description: A modern, sleek custom WordPress theme for RCCG The Praise House Baltimore. Built with clean design, powerful custom post types, and ACF-powered content management.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tphb
+Tags: church, modern, custom-menu, custom-logo, featured-images, full-width-template
+*/
+
+/* All styles are located in assets/css/main.css — loaded via functions.php */

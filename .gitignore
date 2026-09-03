@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Node (if tooling is added later)
+node_modules/
+npm-debug.log*
+
+# Build outputs (if a build step is added later)
+dist/
+build/
+
+# Environment / secrets (never commit these)
+.env
+.env.*
+
+# WordPress-generated cache files that don't belong in version control
+*.cache
