@@ -78,8 +78,8 @@ $svg_cal_placeholder = '<svg viewBox="0 0 48 48" fill="none" stroke="currentColo
                             $reg_url    = get_field('event_registration_url', $event->ID);
                             $thumb      = $flyer ? $flyer['url'] : get_the_post_thumbnail_url($event->ID, 'large');
                             $iso_dt     = tphb_get_event_datetime_iso($event->ID);
-                            $month      = $event_date ? date('M', strtotime($event_date)) : '';
-                            $day        = $event_date ? date('j', strtotime($event_date)) : '';
+                            $month      = $event_date ? wp_date('M', strtotime($event_date)) : '';
+                            $day        = $event_date ? wp_date('j', strtotime($event_date)) : '';
                             ?>
                             <div class="event-card-featured fade-in-up">
                                 <div class="event-card-featured__thumb">
@@ -101,7 +101,7 @@ $svg_cal_placeholder = '<svg viewBox="0 0 48 48" fill="none" stroke="currentColo
                                     </h3>
                                     <div class="event-card-featured__meta">
                                         <?php if ($event_date): ?>
-                                        <span><?php echo $svg_cal; ?> <?php echo esc_html(date('F j, Y', strtotime($event_date))); ?><?php echo $event_time ? ' &mdash; ' . esc_html(date('g:i a', strtotime($event_time))) : ''; ?></span>
+                                        <span><?php echo $svg_cal; ?> <?php echo esc_html(wp_date('F j, Y', strtotime($event_date))); ?><?php echo $event_time ? ' &mdash; ' . esc_html(wp_date('g:i a', strtotime($event_time))) : ''; ?></span>
                                         <?php endif; ?>
                                         <?php if ($location): ?>
                                         <span><?php echo $svg_pin; ?> <?php echo esc_html($location); ?></span>
@@ -137,8 +137,8 @@ $svg_cal_placeholder = '<svg viewBox="0 0 48 48" fill="none" stroke="currentColo
                             $location   = get_field('event_location', $event->ID);
                             $flyer      = get_field('event_flyer',    $event->ID);
                             $thumb      = $flyer ? $flyer['url'] : get_the_post_thumbnail_url($event->ID, 'medium');
-                            $month      = $event_date ? date('M', strtotime($event_date)) : '';
-                            $day        = $event_date ? date('j', strtotime($event_date)) : '';
+                            $month      = $event_date ? wp_date('M', strtotime($event_date)) : '';
+                            $day        = $event_date ? wp_date('j', strtotime($event_date)) : '';
                             ?>
                             <div class="event-card-side fade-in-up">
                                 <?php if ($thumb): ?>
@@ -157,7 +157,7 @@ $svg_cal_placeholder = '<svg viewBox="0 0 48 48" fill="none" stroke="currentColo
                                         <a href="<?php echo esc_url(get_permalink($event->ID)); ?>"><?php echo esc_html(get_the_title($event->ID)); ?></a>
                                     </h4>
                                     <div class="event-card-side__meta">
-                                        <?php if ($event_date): ?><span><?php echo $svg_cal; ?> <?php echo esc_html(date('M j, Y', strtotime($event_date))); ?></span><?php endif; ?>
+                                        <?php if ($event_date): ?><span><?php echo $svg_cal; ?> <?php echo esc_html(wp_date('M j, Y', strtotime($event_date))); ?></span><?php endif; ?>
                                         <?php if ($location): ?><span><?php echo $svg_pin; ?> <?php echo esc_html($location); ?></span><?php endif; ?>
                                     </div>
                                 </div>
@@ -188,8 +188,8 @@ $svg_cal_placeholder = '<svg viewBox="0 0 48 48" fill="none" stroke="currentColo
                             $location   = get_field('event_location', $event->ID);
                             $flyer      = get_field('event_flyer',    $event->ID);
                             $thumb      = $flyer ? $flyer['url'] : get_the_post_thumbnail_url($event->ID, 'large');
-                            $month      = $event_date ? date('M', strtotime($event_date)) : '';
-                            $day        = $event_date ? date('j', strtotime($event_date)) : '';
+                            $month      = $event_date ? wp_date('M', strtotime($event_date)) : '';
+                            $day        = $event_date ? wp_date('j', strtotime($event_date)) : '';
                             ?>
                             <div class="event-card-featured past-event-card fade-in-up">
                                 <div class="event-card-featured__thumb event-card-featured__thumb--past">
@@ -212,7 +212,7 @@ $svg_cal_placeholder = '<svg viewBox="0 0 48 48" fill="none" stroke="currentColo
                                         <a href="<?php echo esc_url(get_permalink($event->ID)); ?>"><?php echo esc_html(get_the_title($event->ID)); ?></a>
                                     </h3>
                                     <div class="event-card-featured__meta">
-                                        <?php if ($event_date): ?><span><?php echo $svg_cal; ?> <?php echo esc_html(date('F j, Y', strtotime($event_date))); ?></span><?php endif; ?>
+                                        <?php if ($event_date): ?><span><?php echo $svg_cal; ?> <?php echo esc_html(wp_date('F j, Y', strtotime($event_date))); ?></span><?php endif; ?>
                                         <?php if ($location): ?><span><?php echo $svg_pin; ?> <?php echo esc_html($location); ?></span><?php endif; ?>
                                     </div>
                                     <a href="<?php echo esc_url(get_permalink($event->ID)); ?>" class="btn btn-sm btn-outline" style="margin-top:0.75rem;">View Recap</a>
@@ -243,7 +243,7 @@ $svg_cal_placeholder = '<svg viewBox="0 0 48 48" fill="none" stroke="currentColo
                                         <a href="<?php echo esc_url(get_permalink($event->ID)); ?>"><?php echo esc_html(get_the_title($event->ID)); ?></a>
                                     </h4>
                                     <?php if ($event_date): ?>
-                                        <div class="event-card-side__meta"><span><?php echo $svg_cal; ?> <?php echo esc_html(date('M j, Y', strtotime($event_date))); ?></span></div>
+                                        <div class="event-card-side__meta"><span><?php echo $svg_cal; ?> <?php echo esc_html(wp_date('M j, Y', strtotime($event_date))); ?></span></div>
                                     <?php endif; ?>
                                 </div>
                             </div>

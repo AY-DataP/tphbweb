@@ -33,9 +33,9 @@ $related = get_posts([
             <h1><?php the_title(); ?></h1>
             <?php if ($event_date): ?>
                 <p style="color:rgba(255,255,255,0.7);">
-                    &#128197; <?php echo esc_html(date('F j, Y', strtotime($event_date))); ?>
+                    &#128197; <?php echo esc_html(wp_date('F j, Y', strtotime($event_date))); ?>
                     <?php if ($event_time): ?>&mdash; <?php echo esc_html(wp_date('g:i a', strtotime($event_time))); ?><?php endif; ?>
-                    <?php if ($end_date && $end_date !== $event_date): ?> &ndash; <?php echo esc_html(date('F j, Y', strtotime($end_date))); ?><?php endif; ?>
+                    <?php if ($end_date && $end_date !== $event_date): ?> &ndash; <?php echo esc_html(wp_date('F j, Y', strtotime($end_date))); ?><?php endif; ?>
                 </p>
             <?php endif; ?>
             <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -65,12 +65,12 @@ $related = get_posts([
                     <div class="single-meta" style="margin-bottom:2rem;">
                         <?php if ($event_date): ?>
                             <span class="single-meta__item">
-                                &#128197; <strong><?php echo esc_html(date('F j, Y', strtotime($event_date))); ?></strong>
+                                &#128197; <strong><?php echo esc_html(wp_date('F j, Y', strtotime($event_date))); ?></strong>
                                 <?php if ($event_time): ?>&mdash; <?php echo esc_html(wp_date('g:i a', strtotime($event_time))); ?><?php endif; ?>
                             </span>
                         <?php endif; ?>
                         <?php if ($end_date && $end_date !== $event_date): ?>
-                            <span class="single-meta__item">&#128198; Ends <?php echo esc_html(date('F j, Y', strtotime($end_date))); ?></span>
+                            <span class="single-meta__item">&#128198; Ends <?php echo esc_html(wp_date('F j, Y', strtotime($end_date))); ?></span>
                         <?php endif; ?>
                         <?php if ($location): ?>
                             <span class="single-meta__item">&#128205; <?php echo esc_html($location); ?></span>
@@ -147,7 +147,7 @@ $related = get_posts([
                                         <a href="<?php echo esc_url(get_permalink($r->ID)); ?>"><?php echo esc_html(get_the_title($r->ID)); ?></a>
                                     </div>
                                     <?php if ($r_date): ?>
-                                        <div class="sidebar-post__date">&#128197; <?php echo esc_html(date('M j, Y', strtotime($r_date))); ?></div>
+                                        <div class="sidebar-post__date">&#128197; <?php echo esc_html(wp_date('M j, Y', strtotime($r_date))); ?></div>
                                     <?php endif; ?>
                                 </div>
                             </div>
